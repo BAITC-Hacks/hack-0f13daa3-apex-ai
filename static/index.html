@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Помощник: Учебные Материалы</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AI Помощник Лекций</h1>
+            <p>Превратите текст вашей лекции в конспект, тезисы, тесты и карточки за пару секунд.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="input-section">
+            <textarea id="lectureText" placeholder="Вставьте текст лекции сюда..."></textarea>
+            <button id="generateBtn">Создать материалы</button>
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>ИИ обрабатывает текст лекции, пожалуйста подождите...</p>
+            </div>
+            <div id="errorMessage" class="error hidden"></div>
+        </section>
+
+        <section id="results" class="results-section hidden">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="summary-tab">📄 Конспект</button>
+                <button class="tab-btn" data-tab="keys-tab">🔑 Основные тезисы</button>
+                <button class="tab-btn" data-tab="quiz-tab">📝 Тест</button>
+                <button class="tab-btn" data-tab="flashcards-tab">🧠 Карточки</button>
+            </div>
+
+            <div class="tab-content active" id="summary-tab">
+                <h3>Конспект</h3>
+                <div id="summaryContent" class="content-box"></div>
+            </div>
+
+            <div class="tab-content hidden" id="keys-tab">
+                <h3>Основные тезисы</h3>
+                <ul id="keysContent" class="content-box list"></ul>
+            </div>
+
+            <div class="tab-content hidden" id="quiz-tab">
+                <h3>Тестовые вопросы</h3>
+                <div id="quizContent" class="content-box"></div>
+            </div>
+
+            <div class="tab-content hidden" id="flashcards-tab">
+                <h3>Карточки для повторения</h3>
+                <div id="flashcardsContent" class="content-box cards-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
